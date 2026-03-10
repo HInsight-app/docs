@@ -1,0 +1,18 @@
+# LaTeX Core Temp Files
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+
+# Ignore Compiled PDFs
+*.pdf
+
+# EXCEPTIONS (If you absolutely must track a specific PDF, uncomment below)
+# !final_thesis_submission.pdf

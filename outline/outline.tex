@@ -1,0 +1,156 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{mathptmx}
+\usepackage{setspace}
+\usepackage{iftex}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage[indonesian]{babel} % Tells LaTeX how to hyphenate Indonesian words
+% \usepackage{microtype} % Magically micro-adjusts spacing so justified margins are perfectly flat
+\begin{document}
+\onehalfspacing
+\begin{center}
+\textbf{OUTLINE SKRIPSI NON KELAS/ARTIKEL ILMIAH}
+
+\vspace{1em}
+\textbf{JUDUL INDONESIA}\\
+\textbf{Perancangan dan Evaluasi Sistem Memori Keputusan untuk Meningkatkan Kualitas Pengambilan Keputusan Manusia}
+
+\vspace{1em}
+\textbf{JUDUL INGGRIS}\\
+\textbf{Design and Evaluation of a Decision Memory System to Improve Human Decision-Making Quality}
+
+\vspace{1em}
+\textbf{Topik}: \textbf{E-Application}
+
+\textless\textless 2702253364\textgreater\textgreater\ \textless\textless Marcello Alvinskie\textgreater\textgreater\ \textless\textless Computer Science\textgreater\textgreater\ / \textless\textless 0852 1176 6633\textgreater\textgreater\\
+\textless\textless 2702326151\textgreater\textgreater\ \textless\textless Owen Siau\textgreater\textgreater\ \textless\textless Computer Science\textgreater\textgreater\ / \textless\textless 0878 3911 9783\textgreater\textgreater\\
+\textless\textless 2702329664\textgreater\textgreater\ \textless\textless Dominikus Sebastian Ramli\textgreater\textgreater\ \textless\textless Computer Science\textgreater\textgreater\ / \textless\textless 0821 1085 5768\textgreater\textgreater
+\end{center}
+\vspace{1em}
+\begin{center}
+\includegraphics[width=3.5in,keepaspectratio]{media/binus_logo.png}
+\vspace{3em}
+
+\textbf{Computer Science}\\
+\textbf{Computer Science Study Program School of Computer Science}\\
+\textbf{Universitas Bina Nusantara}\\
+\textbf{Jakarta}\\
+\textbf{2026}
+\end{center}
+
+\newpage
+
+\section*{DAFTAR ISI}
+
+Daftar Isi \hfill i
+
+\begin{enumerate}
+  \item Latar Belakang \hfill 1
+  \item Rumusan Masalah \hfill 1
+  \item Ruang Lingkup \hfill 1
+  \item Tujuan dan Manfaat
+  \begin{enumerate}
+    \item Tujuan. \hfill 1
+    \item Manfaat. \hfill 1
+  \end{enumerate}
+  \item Metodologi Penelitian \hfill 1
+\end{enumerate}
+
+Daftar Pustaka \hfill 2
+
+\newpage
+
+\section{LATAR BELAKANG}
+
+Pengambilan keputusan merupakan proses kognitif yang tidak terpisahkan dari kehidupan manusia, baik dalam konteks personal, akademik, maupun profesional. Keputusan yang diambil oleh individu seperti pemilihan jurusan, perencanaan karier, pengelolaan keuangan, hingga keputusan terkait kesehatan memiliki dampak jangka panjang terhadap kualitas hidup. Kualitas pengambilan keputusan menjadi faktor penting yang memengaruhi keberhasilan individu dalam berbagai aspek kehidupan \cite{kahneman2011}.
+
+Berbagai penelitian dalam bidang decision science dan psikologi kognitif menunjukkan bahwa manusia sering kali mengalami keterbatasan dalam mengingat alasan di balik keputusan yang telah diambil, alternatif yang pernah dipertimbangkan, serta hasil dari keputusan tersebut \cite{tversky1974, aragon2023}.
+
+Keterbatasan ini menyebabkan individu cenderung mengulangi kesalahan keputusan yang sama serta sulit melakukan pembelajaran sistematis dari pengalaman masa lalu \cite{dubiel2024}. Penelitian terkini juga mengonfirmasi bahwa refleksi terstruktur terhadap keputusan masa lalu dapat meningkatkan kualitas pengambilan keputusan di masa depan melalui feedback loop kognitif \cite{azadi2025}.
+
+Saat ini, telah tersedia berbagai sistem digital yang mendukung aktivitas manusia, seperti aplikasi pencatat, journaling digital, habit tracker, dan sistem pembelajaran berbasis spaced repetition seperti Anki. Sistem-sistem tersebut terbukti efektif dalam membantu manusia mengingat fakta atau membentuk kebiasaan, namun belum secara khusus dirancang untuk menyimpan dan mengevaluasi keputusan sebagai suatu objek pembelajaran \cite{aragon2023}. Aplikasi journaling umumnya bersifat reflektif tanpa evaluasi terstruktur, sementara habit tracker lebih berfokus pada perilaku, bukan kualitas keputusan \cite{dubiel2024}.
+
+Dalam konteks sosial dan ekonomi saat ini, khususnya pada masyarakat perkotaan dan generasi muda yang hidup di lingkungan dengan tingkat kompleksitas pilihan yang tinggi, kebutuhan akan sistem pendukung pengambilan keputusan menjadi semakin relevan. Akses terhadap informasi yang melimpah tidak selalu diiringi dengan kemampuan untuk mengevaluasi keputusan secara efektif \cite{cubukcu2025}. Hal ini menunjukkan adanya potensi pemanfaatan teknologi untuk membantu individu membangun kesadaran dan refleksi terhadap pola pengambilan keputusan mereka.
+
+Penelitian ini menawarkan solusi berupa Decision Memory System (DMS), yaitu sistem yang dirancang untuk membantu pengguna mencatat keputusan yang diambil, alasan pengambilan keputusan, tingkat keyakinan, serta melakukan evaluasi retrospektif terhadap hasil keputusan tersebut. Dengan menciptakan feedback loop kognitif, sistem ini diharapkan dapat membantu pengguna belajar dari keputusan masa lalu dan meningkatkan kualitas keputusan di masa depan \cite{auf2025}.
+
+Luaran yang diharapkan dari penelitian ini adalah sebuah prototipe Decision Memory System beserta hasil evaluasi usability dan persepsi pengguna. Secara jangka panjang, penelitian ini diharapkan dapat memberikan kontribusi dalam bidang Human-Computer Interaction dan decision support system, serta menjadi dasar pengembangan sistem pendukung keputusan personal yang lebih adaptif dan reflektif \cite{azadi2025, cubukcu2025}.
+
+\section{RUMUSAN MASALAH}
+
+\begin{enumerate}
+  \item Bagaimana merancang sebuah Decision Memory System yang dapat mendukung pencatatan dan refleksi keputusan pengguna?
+  \item Fitur apa saja yang dibutuhkan dalam sistem memori keputusan untuk membantu pembelajaran dari keputusan masa lalu?
+  \item Bagaimana tingkat usability dari prototipe Decision Memory System yang dirancang?
+  \item Bagaimana persepsi pengguna terhadap manfaat sistem dalam meningkatkan kualitas pengambilan keputusan?
+\end{enumerate}
+
+\section{RUANG LINGKUP}
+
+\begin{enumerate}
+  \item Penelitian berfokus pada perancangan dan evaluasi prototipe Decision Memory System.
+  \item Sistem ditujukan untuk mendukung pengambilan keputusan personal, bukan keputusan organisasi atau industri.
+  \item Fitur sistem mencakup:
+  \begin{itemize}
+    \item Pencatatan keputusan
+    \item Alasan pengambilan keputusan
+    \item Tingkat keyakinan pengguna
+    \item Evaluasi retrospektif keputusan
+  \end{itemize}
+  \item Sistem tidak memberikan rekomendasi keputusan otomatis, melainkan berfungsi sebagai alat refleksi dan pembelajaran.
+  \item Evaluasi dilakukan dengan pendekatan Human–Computer Interaction.
+  \item Target pengguna penelitian ini adalah:
+  \begin{itemize}
+    \item Mahasiswa atau individu dewasa muda
+    \item Pengguna yang secara rutin mengambil keputusan personal dan akademik
+  \end{itemize}
+\end{enumerate}
+
+\section{TUJUAN DAN MANFAAT}
+
+\subsection{Tujuan}
+Tujuan dari penelitian ini adalah untuk:
+\begin{enumerate}
+  \item Merancang sebuah Decision Memory System yang dapat membantu pengguna menyimpan dan merefleksikan keputusan yang telah diambil.
+  \item Mengidentifikasi fitur-fitur penting yang mendukung pembelajaran dari keputusan masa lalu.
+  \item Mengevaluasi tingkat usability dari prototipe sistem yang dirancang.
+  \item Menganalisis persepsi pengguna terhadap manfaat sistem dalam meningkatkan kualitas pengambilan keputusan.
+\end{enumerate}
+
+\subsection{Manfaat}
+Manfaat yang diharapkan dari penelitian ini adalah:
+\begin{enumerate}
+  \item Memberikan kontribusi akademik dalam bidang Human–Computer Interaction dan decision science.
+  \item Menjadi referensi awal bagi pengembangan sistem pendukung pengambilan keputusan personal.
+  \item Membantu pengguna meningkatkan kesadaran dan refleksi terhadap pola pengambilan keputusan mereka.
+  \item Menjadi dasar penelitian lanjutan terkait sistem memori keputusan berbasis teknologi.
+\end{enumerate}
+
+\section{METODOLOGI PENELITIAN}
+
+\subsection{Metode Pengumpulan Data}
+Metode pengumpulan data yang digunakan dalam penelitian ini meliputi:
+\begin{enumerate}
+  \item Studi Literatur, untuk memahami konsep pengambilan keputusan, memori kognitif, dan evaluasi usability.
+  \item Observasi dan Kuesioner, untuk mengumpulkan data kebutuhan pengguna dan persepsi terhadap sistem.
+  \item Usability Testing, untuk mengevaluasi kemudahan penggunaan dan efektivitas prototipe.
+  \item Metode Perancangan/ Pengembangan/ analisa atas sistem/ solusi dikerjakan
+\end{enumerate}
+
+\subsection{Metode Perancangan dan Analisis Sistem}
+Metode yang digunakan dalam perancangan dan analisis sistem adalah:
+\begin{enumerate}
+  \item Identifikasi kebutuhan pengguna berdasarkan hasil studi literatur dan pengumpulan data awal.
+  \item Perancangan prototipe Decision Memory System (low-fidelity dan/atau high-fidelity).
+  \item Implementasi prototipe dalam bentuk antarmuka interaktif.
+  \item Evaluasi sistem menggunakan metode usability dan analisis hasil pengujian.
+  \item Analisis temuan dan penyusunan rekomendasi perbaikan sistem.
+\end{enumerate}
+
+\renewcommand{\refname}{DAFTAR PUSTAKA}
+\bibliographystyle{plain} 
+\bibliography{references}
+
+\end{document}
