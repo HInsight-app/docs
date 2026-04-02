@@ -6,151 +6,136 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{cite}
-\usepackage[indonesian]{babel} % Tells LaTeX how to hyphenate Indonesian words
-% \usepackage{microtype} % Magically micro-adjusts spacing so justified margins are perfectly flat
+\usepackage[indonesian]{babel}
 \begin{document}
 \onehalfspacing
+ 
 \begin{center}
 \textbf{OUTLINE SKRIPSI NON KELAS/ARTIKEL ILMIAH}
-
+ 
 \vspace{1em}
 \textbf{JUDUL INDONESIA}\\
-\textbf{Perancangan dan Evaluasi Sistem Memori Keputusan untuk Meningkatkan Kualitas Pengambilan Keputusan Manusia}
-
+\textbf{Perancangan dan Evaluasi Aplikasi Mobile HInsight untuk Deteksi Bias Kognitif Berbasis AI dalam Pengambilan Keputusan Mahasiswa}
+ 
 \vspace{1em}
 \textbf{JUDUL INGGRIS}\\
-\textbf{Design and Evaluation of a Decision Memory System to Improve Human Decision-Making Quality}
-
+\textbf{Design and Evaluation of HInsight: An AI-Based Mobile Application for Cognitive Bias Detection in Student Decision-Making}
+ 
 \vspace{1em}
 \textbf{Topik}: \textbf{E-Application}
-
-\textless\textless 2702253364\textgreater\textgreater\ \textless\textless Marcello Alvinskie\textgreater\textgreater\ \textless\textless Computer Science\textgreater\textgreater\ / \textless\textless 0852 1176 6633\textgreater\textgreater\\
-\textless\textless 2702326151\textgreater\textgreater\ \textless\textless Owen Siau\textgreater\textgreater\ \textless\textless Computer Science\textgreater\textgreater\ / \textless\textless 0878 3911 9783\textgreater\textgreater\\
-\textless\textless 2702329664\textgreater\textgreater\ \textless\textless Dominikus Sebastian Ramli\textgreater\textgreater\ \textless\textless Computer Science\textgreater\textgreater\ / \textless\textless 0821 1085 5768\textgreater\textgreater
+ 
+\vspace{1em}
+\begin{tabular}{l l l l}
+2702253364 & Marcello Alvinskie        & Computer Science & 0852 1176 6633 \\
+2702326151 & Owen Siau                 & Computer Science & 0878 3911 9783 \\
+2702329664 & Dominikus Sebastian Ramli & Computer Science & 0821 1085 5768 \\
+\end{tabular}
 \end{center}
+ 
 \vspace{1em}
 \begin{center}
 \includegraphics[width=3.5in,keepaspectratio]{media/binus_logo.png}
 \vspace{3em}
-
+ 
 \textbf{Computer Science}\\
-\textbf{Computer Science Study Program School of Computer Science}\\
+\textbf{School of Computer Science}\\
 \textbf{Universitas Bina Nusantara}\\
 \textbf{Jakarta}\\
 \textbf{2026}
 \end{center}
-
+ 
 \newpage
-
-\section*{DAFTAR ISI}
-
-Daftar Isi \hfill i
-
-\begin{enumerate}
-  \item Latar Belakang \hfill 1
-  \item Rumusan Masalah \hfill 1
-  \item Ruang Lingkup \hfill 1
-  \item Tujuan dan Manfaat
-  \begin{enumerate}
-    \item Tujuan. \hfill 1
-    \item Manfaat. \hfill 1
-  \end{enumerate}
-  \item Metodologi Penelitian \hfill 1
-\end{enumerate}
-
-Daftar Pustaka \hfill 2
-
+\tableofcontents
 \newpage
-
+  
 \section{LATAR BELAKANG}
 
-Pengambilan keputusan merupakan proses kognitif yang tidak terpisahkan dari kehidupan manusia, baik dalam konteks personal, akademik, maupun profesional. Keputusan yang diambil oleh individu seperti pemilihan jurusan, perencanaan karier, pengelolaan keuangan, hingga keputusan terkait kesehatan memiliki dampak jangka panjang terhadap kualitas hidup. Kualitas pengambilan keputusan menjadi faktor penting yang memengaruhi keberhasilan individu dalam berbagai aspek kehidupan \cite{kahneman2011}.
+Pengambilan keputusan merupakan bagian tak terpisahkan dari kehidupan mahasiswa. Keputusan seperti pemilihan mata kuliah, arah karier, pengelolaan keuangan, dan alokasi waktu belajar berdampak langsung pada kualitas hidup jangka panjang \cite{kahneman2011}. Mahasiswa sebagai kelompok yang berada pada fase transisi menuju kemandirian sering dihadapkan pada berbagai keputusan kompleks tanpa panduan yang terstruktur. Contohnya, seorang mahasiswa yang kesulitan mencari informasi terpercaya tentang prospek suatu bidang mungkin akan salah memilih mata kuliah pilihan, yang berujung pada penurunan motivasi belajar dan nilai akademik. Keputusan sehari-hari seperti membagi waktu juga kerap menjadi sumber stres ketika tidak dikelola dengan baik, secara langsung mempengaruhi kualitas hidup mereka.
 
-Berbagai penelitian dalam bidang decision science dan psikologi kognitif menunjukkan bahwa manusia sering kali mengalami keterbatasan dalam mengingat alasan di balik keputusan yang telah diambil, alternatif yang pernah dipertimbangkan, serta hasil dari keputusan tersebut \cite{tversky1974, aragon2023}.
+Penelitian dalam bidang psikologi kognitif menunjukkan bahwa manusia secara sistematis rentan terhadap bias kognitif dalam proses pengambilan keputusan \cite{tversky1974}. Bias seperti \textit{confirmation bias}, \textit{overconfidence}, \textit{loss aversion}, dan \textit{sunk cost fallacy} terbukti memengaruhi kualitas pilihan yang diambil, sering kali tanpa disadari oleh individu yang bersangkutan \cite{kahneman2011}. 
 
-Keterbatasan ini menyebabkan individu cenderung mengulangi kesalahan keputusan yang sama serta sulit melakukan pembelajaran sistematis dari pengalaman masa lalu \cite{dubiel2024}. Penelitian terkini juga mengonfirmasi bahwa refleksi terstruktur terhadap keputusan masa lalu dapat meningkatkan kualitas pengambilan keputusan di masa depan melalui feedback loop kognitif \cite{azadi2025}.
+Kebutuhan akan solusi yang aplikatif pun menjadi mendesak. Beberapa penelitian telah mencoba mengatasi permasalahan ini dari sudut yang berbeda. Aragon-Hahner et al. mengembangkan FindMyself, sebuah aplikasi \textit{mobile} untuk membantu mahasiswa mengenali kekuatan dan minat diri dalam pengambilan keputusan karier \cite{aragon2023}. Pendekatan berbasis refleksi ini efektif mendukung proses keputusan, namun tidak dirancang untuk mendeteksi bias kognitif. Sementara itu, Dubiel et al. menemukan bahwa umpan balik proaktif berbasis AI yang diberikan sebelum keputusan difinalisasi secara nyata meningkatkan refleksi pengguna \cite{dubiel2024}, namun sistem tersebut tidak mencakup pencatatan keputusan terstruktur maupun evaluasi retrospektif.
 
-Saat ini, telah tersedia berbagai sistem digital yang mendukung aktivitas manusia, seperti aplikasi pencatat, journaling digital, habit tracker, dan sistem pembelajaran berbasis spaced repetition seperti Anki. Sistem-sistem tersebut terbukti efektif dalam membantu manusia mengingat fakta atau membentuk kebiasaan, namun belum secara khusus dirancang untuk menyimpan dan mengevaluasi keputusan sebagai suatu objek pembelajaran \cite{aragon2023}. Aplikasi journaling umumnya bersifat reflektif tanpa evaluasi terstruktur, sementara habit tracker lebih berfokus pada perilaku, bukan kualitas keputusan \cite{dubiel2024}.
+Sejauh ini belum terdapat sistem yang mengintegrasikan pencatatan keputusan terstruktur, deteksi bias kognitif berbasis AI secara proaktif, serta evaluasi retrospektif dalam satu platform \textit{mobile}. Perkembangan model bahasa besar membuka peluang untuk menjawab kekosongan ini. Echterhoff et al. membuktikan bahwa model bahasa besar dapat digunakan untuk mendeteksi sekaligus memitigasi bias kognitif melalui mekanisme \textit{self-help debiasing} \cite{echterhoff2024}, yang menjadi landasan konseptual bagi pengembangan HInsight.
 
-Dalam konteks sosial dan ekonomi saat ini, khususnya pada masyarakat perkotaan dan generasi muda yang hidup di lingkungan dengan tingkat kompleksitas pilihan yang tinggi, kebutuhan akan sistem pendukung pengambilan keputusan menjadi semakin relevan. Akses terhadap informasi yang melimpah tidak selalu diiringi dengan kemampuan untuk mengevaluasi keputusan secara efektif \cite{cubukcu2025}. Hal ini menunjukkan adanya potensi pemanfaatan teknologi untuk membantu individu membangun kesadaran dan refleksi terhadap pola pengambilan keputusan mereka.
+HInsight diusulkan sebagai solusi yang memungkinkan pengguna mencatat keputusan beserta konteksnya, mengeksplorasi alternatif pilihan dengan pertimbangan pro dan kontra, serta menerima analisis AI sebelum keputusan dikonfirmasi. Setelah keputusan dijalankan, sistem memungkinkan evaluasi retrospektif yang hasilnya dianalisis kembali oleh AI untuk menghasilkan wawasan pembelajaran. Seluruh proses ini direpresentasikan melalui arsitektur sistem informasi terintegrasi yang memodelkan siklus hidup keputusan pengguna secara komprehensif, mulai dari fase pra-keputusan hingga evaluasi pasca-keputusan.
 
-Penelitian ini menawarkan solusi berupa Decision Memory System (DMS), yaitu sistem yang dirancang untuk membantu pengguna mencatat keputusan yang diambil, alasan pengambilan keputusan, tingkat keyakinan, serta melakukan evaluasi retrospektif terhadap hasil keputusan tersebut. Dengan menciptakan feedback loop kognitif, sistem ini diharapkan dapat membantu pengguna belajar dari keputusan masa lalu dan meningkatkan kualitas keputusan di masa depan \cite{auf2025}.
-
-Luaran yang diharapkan dari penelitian ini adalah sebuah prototipe Decision Memory System beserta hasil evaluasi usability dan persepsi pengguna. Secara jangka panjang, penelitian ini diharapkan dapat memberikan kontribusi dalam bidang Human-Computer Interaction dan decision support system, serta menjadi dasar pengembangan sistem pendukung keputusan personal yang lebih adaptif dan reflektif \cite{azadi2025, cubukcu2025}.
+Penelitian ini memiliki tiga kontribusi utama: (1) deteksi bias kognitif berbasis AI secara proaktif sebelum keputusan difinalisasi, (2) integrasi pencatatan keputusan terstruktur dengan evaluasi retrospektif dalam satu sistem, dan (3) penerapan model bahasa besar dengan \textit{constrained prompting} dalam konteks \textit{Human-Computer Interaction} berbasis \textit{mobile}.
 
 \section{RUMUSAN MASALAH}
-
+ 
 \begin{enumerate}
-  \item Bagaimana merancang sebuah Decision Memory System yang dapat mendukung pencatatan dan refleksi keputusan pengguna?
-  \item Fitur apa saja yang dibutuhkan dalam sistem memori keputusan untuk membantu pembelajaran dari keputusan masa lalu?
-  \item Bagaimana tingkat usability dari prototipe Decision Memory System yang dirancang?
-  \item Bagaimana persepsi pengguna terhadap manfaat sistem dalam meningkatkan kualitas pengambilan keputusan?
+  \item Bagaimana merancang aplikasi mobile HInsight yang mampu mengidentifikasi bias kognitif secara kontekstual sebelum pengguna membuat keputusan?
+  \item Bagaimana tingkat usability serta persepsi manfaat aplikasi HInsight dalam mendukung refleksi dan kesadaran pengguna terhadap bias kognitif?
 \end{enumerate}
-
+ 
 \section{RUANG LINGKUP}
-
+ 
 \begin{enumerate}
-  \item Penelitian berfokus pada perancangan dan evaluasi prototipe Decision Memory System.
-  \item Sistem ditujukan untuk mendukung pengambilan keputusan personal, bukan keputusan organisasi atau industri.
-  \item Fitur sistem mencakup:
+  \item Penelitian berfokus pada perancangan, implementasi, dan evaluasi prototipe aplikasi mobile HInsight.
+  \item Target pengguna adalah mahasiswa aktif di Indonesia, khususnya mahasiswa Universitas Bina Nusantara Alam Sutera.
+  \item Fitur utama sistem mencakup:
   \begin{itemize}
-    \item Pencatatan keputusan
-    \item Alasan pengambilan keputusan
-    \item Tingkat keyakinan pengguna
-    \item Evaluasi retrospektif keputusan
+    \item Pencatatan keputusan (\texttt{decisions}) dengan konteks dan tingkat keyakinan awal
+    \item Penambahan alternatif pilihan (\texttt{options}) dengan pro dan kontra yang bersifat opsional
+    \item Sistem kategorisasi keputusan menggunakan tag (\texttt{tags}, \texttt{decision\_tags})
+    \item Analisis bias kognitif berbasis AI pra-keputusan (\texttt{ai\_insights})
+    \item Pencatatan hasil dan komitmen keputusan (\texttt{decision\_outcomes})
+    \item Evaluasi retrospektif (\texttt{evaluations}) dengan penilaian kepuasan dan catatan tinjauan balik
+    \item Analisis AI pasca-evaluasi
   \end{itemize}
-  \item Sistem tidak memberikan rekomendasi keputusan otomatis, melainkan berfungsi sebagai alat refleksi dan pembelajaran.
-  \item Evaluasi dilakukan dengan pendekatan Human–Computer Interaction.
-  \item Target pengguna penelitian ini adalah:
-  \begin{itemize}
-    \item Mahasiswa atau individu dewasa muda
-    \item Pengguna yang secara rutin mengambil keputusan personal dan akademik
-  \end{itemize}
+  \item Teknologi yang digunakan meliputi Flutter dan Dart untuk aplikasi mobile, Go dengan framework Echo untuk REST API backend, PostgreSQL untuk basis data server, Isar untuk basis data lokal, dan Gemini API untuk analisis AI.
+  \item Sistem mengidentifikasi potensi bias kognitif namun tidak memberikan rekomendasi keputusan secara otomatis. Sistem berfungsi sebagai alat refleksi dan peningkatan kesadaran.
+  \item Evaluasi dilakukan melalui usability testing dan kuesioner persepsi pengguna.
+  % \item Sistem menerapkan prinsip privasi data mencakup soft delete untuk seluruh data keputusan, masking alamat IP sesuai ketentuan UU PDP, dan manajemen sesi terbatas waktu. Konflik sinkronisasi antara basis data lokal Isar dan server PostgreSQL diselesaikan melalui mekanisme resolusi konflik pada sisi server.
+  \item Penelitian tidak mencakup keputusan kolektif, organisasional, atau industrial.
 \end{enumerate}
-
+ 
 \section{TUJUAN DAN MANFAAT}
-
+ 
 \subsection{Tujuan}
 Tujuan dari penelitian ini adalah untuk:
 \begin{enumerate}
-  \item Merancang sebuah Decision Memory System yang dapat membantu pengguna menyimpan dan merefleksikan keputusan yang telah diambil.
-  \item Mengidentifikasi fitur-fitur penting yang mendukung pembelajaran dari keputusan masa lalu.
-  \item Mengevaluasi tingkat usability dari prototipe sistem yang dirancang.
-  \item Menganalisis persepsi pengguna terhadap manfaat sistem dalam meningkatkan kualitas pengambilan keputusan.
+  \item Merancang dan mengimplementasikan aplikasi mobile HInsight yang mengintegrasikan pencatatan keputusan terstruktur dengan deteksi bias kognitif berbasis AI secara proaktif sebelum pengguna berkomitmen pada sebuah keputusan.
+  \item Mengevaluasi tingkat usability serta persepsi manfaat aplikasi HInsight dalam mendukung refleksi dan kesadaran pengguna terhadap bias kognitif melalui usability testing dan kuesioner tervalidasi.
 \end{enumerate}
-
+ 
 \subsection{Manfaat}
 Manfaat yang diharapkan dari penelitian ini adalah:
 \begin{enumerate}
-  \item Memberikan kontribusi akademik dalam bidang Human–Computer Interaction dan decision science.
-  \item Menjadi referensi awal bagi pengembangan sistem pendukung pengambilan keputusan personal.
-  \item Membantu pengguna meningkatkan kesadaran dan refleksi terhadap pola pengambilan keputusan mereka.
-  \item Menjadi dasar penelitian lanjutan terkait sistem memori keputusan berbasis teknologi.
+  \item \textbf{Bagi pengguna:} Meningkatkan kesadaran mahasiswa terhadap bias kognitif pribadi dan menyediakan alat bantu refleksi terstruktur untuk mendukung kualitas pengambilan keputusan sehari-hari.
+  \item \textbf{Bagi akademik:} Memberikan kontribusi dalam bidang Human-Computer Interaction dan pengembangan sistem pendukung keputusan personal berbasis AI generatif.
+  \item \textbf{Bagi pengembangan teknologi:} Menjadi referensi arsitektur bagi pengembangan aplikasi mobile yang mengintegrasikan model bahasa besar untuk analisis perilaku kognitif pengguna.
+  \item \textbf{Bagi penelitian lanjutan:} Menjadi dasar eksplorasi penerapan personalisasi adaptif dan reinforcement learning untuk meningkatkan relevansi deteksi bias dalam jangka panjang.
 \end{enumerate}
-
+ 
 \section{METODOLOGI PENELITIAN}
-
+ 
 \subsection{Metode Pengumpulan Data}
 Metode pengumpulan data yang digunakan dalam penelitian ini meliputi:
 \begin{enumerate}
-  \item Studi Literatur, untuk memahami konsep pengambilan keputusan, memori kognitif, dan evaluasi usability.
-  \item Observasi dan Kuesioner, untuk mengumpulkan data kebutuhan pengguna dan persepsi terhadap sistem.
-  \item Usability Testing, untuk mengevaluasi kemudahan penggunaan dan efektivitas prototipe.
-  \item Metode Perancangan/ Pengembangan/ analisa atas sistem/ solusi dikerjakan
+  \item \textbf{Studi Literatur}, untuk memahami konsep bias kognitif, decision science, arsitektur sistem mobile-backend, integrasi model bahasa besar, serta metode evaluasi usability.
+  \item \textbf{Kuesioner Kebutuhan Pengguna}, untuk mengidentifikasi kebiasaan pengambilan keputusan, kesulitan yang dihadapi, dan fitur yang diharapkan oleh mahasiswa.
+  \item \textbf{Usability Testing}, untuk mengevaluasi kemudahan penggunaan, efektivitas fitur deteksi bias, dan kepuasan pengguna terhadap prototipe yang dikembangkan.
 \end{enumerate}
-
-\subsection{Metode Perancangan dan Analisis Sistem}
-Metode yang digunakan dalam perancangan dan analisis sistem adalah:
+ 
+\subsection{Metode Pengembangan Sistem}
+Pengembangan HInsight menggunakan metodologi Kanban sebagaimana didefinisikan oleh Anderson \cite{anderson2010}. Kanban dipilih karena sifat penelitian ini yang berfokus pada pengiriman prototipe secara bertahap dengan tim kecil beranggotakan tiga orang. Alur kerja divisualisasikan dalam papan Kanban dengan kolom Backlog, In Progress, Review, dan Done, dengan kapasitas pengerjaan tiap anggota tim dibatasi untuk memastikan setiap fitur diselesaikan sepenuhnya sebelum fitur berikutnya dimulai.
+ 
+Tahapan perancangan dan pengembangan sistem adalah sebagai berikut:
 \begin{enumerate}
-  \item Identifikasi kebutuhan pengguna berdasarkan hasil studi literatur dan pengumpulan data awal.
-  \item Perancangan prototipe Decision Memory System (low-fidelity dan/atau high-fidelity).
-  \item Implementasi prototipe dalam bentuk antarmuka interaktif.
-  \item Evaluasi sistem menggunakan metode usability dan analisis hasil pengujian.
-  \item Analisis temuan dan penyusunan rekomendasi perbaikan sistem.
-\end{enumerate}
-
+  \item \textbf{Analisis Kebutuhan}: Identifikasi kebutuhan fungsional dan non-fungsional berdasarkan studi literatur dan kuesioner pengguna, mencakup alur pencatatan keputusan, proses deteksi bias, dan evaluasi retrospektif.
+\item \textbf{Perancangan Arsitektur Sistem}: Perancangan arsitektur \textit{client-server} menggunakan Flutter dan Dart pada sisi klien untuk performa antarmuka berlatensi rendah melalui kompilasi \textit{native} \cite{ieee2025flutter}; Go dengan Echo REST API untuk konkurensi tingkat tinggi dalam menangani panggilan Gemini API secara asinkron \cite{jutif2025golang}; PostgreSQL sebagai basis data utama yang memanfaatkan tipe data \texttt{JSONB} guna menyimpan struktur keluaran AI tanpa mengorbankan integritas transaksional (ACID) \cite{ijres2025postgres}; serta Isar sebagai basis data lokal berkinerja tinggi untuk memfasilitasi fungsionalitas pencatatan keputusan pada perangkat \textit{mobile}.  \item \textbf{Perancangan Basis Data}: Basis data dirancang untuk merepresentasikan siklus hidup keputusan secara lengkap. Entitas utama \texttt{decisions} berelasi dengan \texttt{options}, \texttt{decision\_outcomes}, dan \texttt{evaluations}. Hasil analisis AI disimpan dalam \texttt{ai\_insights} dengan atribut terstruktur. Sistem kategorisasi diimplementasikan melalui relasi many-to-many antara \texttt{tags} dan \texttt{decision\_tags}.
+  \item \textbf{Perancangan Prompt AI}: Sistem menggunakan constrained prompting pada Gemini API untuk menghasilkan keluaran terstruktur mencakup jenis bias kognitif, tingkat risiko, nada emosional, skor keyakinan model, dan saran alternatif. Prompt dirancang untuk membatasi ruang keluaran model agar klasifikasi bias mengacu pada kategori yang terdefinisi secara psikologis.
+  \item \textbf{Perancangan Antarmuka Pengguna}: Pembuatan wireframe dan prototipe high-fidelity dengan alur utama mulai dari pencatatan keputusan, penambahan opsi, permintaan analisis AI, komitmen, evaluasi, hingga analisis AI pasca-evaluasi.
+  \item \textbf{Implementasi}: Pengembangan aplikasi mobile dan backend API berdasarkan rancangan yang telah divalidasi sesuai urutan prioritas pada papan Kanban.
+  \item \textbf{Evaluasi}: Evaluasi dilakukan menggunakan System Usability Scale (SUS) untuk mengukur tingkat usability sistem, serta Technology Acceptance Model (TAM) untuk mengukur persepsi manfaat dan penerimaan pengguna terhadap integrasi AI dalam aplikasi.\end{enumerate}
+ 
+\subsection{Mitigasi Keterbatasan AI}
+Mengingat bahwa model bahasa besar dapat menghasilkan klasifikasi yang keliru, sistem menampilkan peringatan kontekstual kepada pengguna bahwa analisis AI bersifat sugestif dan tidak menggantikan pertimbangan pribadi. Peringatan tersebut disesuaikan berdasarkan tingkat risiko keputusan dan skor keyakinan model yang dihasilkan pada setiap analisis, sehingga pengguna terdorong untuk melakukan refleksi kritis terhadap keluaran AI.
+ 
 \renewcommand{\refname}{DAFTAR PUSTAKA}
-\bibliographystyle{plain} 
+\bibliographystyle{unsrt}
 \bibliography{references}
-
+ 
 \end{document}
